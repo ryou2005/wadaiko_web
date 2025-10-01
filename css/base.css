@@ -73,6 +73,7 @@ header{
 
 .main-nav ul{
   display:flex;
+  font-weight: bold;
 }
 
 .main-nav ul li{
