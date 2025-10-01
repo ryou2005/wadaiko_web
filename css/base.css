@@ -61,7 +61,7 @@ header{
 .social ul li a:hover,
 .social ul li a:active,
 .social ul li.current a{
-  color:#8c6239;
+  color:#000000;
 }
 
 .main-nav{
@@ -87,7 +87,7 @@ header{
 .main-nav ul li a:hover,
 .main-nav ul li a:active,
 .main-nav ul li.current a{
-  color:#8c6239;
+  color:#000000;
 }
 
 #main_image{
