@@ -94,7 +94,7 @@ header{
 #main_image{
   width:100%;
   height:50vh;
-  background-image:url(https://dummyimage.com/3000x2500/ccc/fff);
+  background-image:url(..//images/syuugou.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -102,3 +102,116 @@ header{
 
 /*contents*/
 
+.contents{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+#main_content{
+  width: 65%;
+}
+
+#sub_content{
+  width: 31%;
+}
+
+#home h2{
+    margin-bottom: 20px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #000000;
+  font-size: 1.2rem;
+}
+
+#summary ul li{
+  margin-bottom: 10px;
+  list-style-type: none;
+}
+
+#news dl {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+#news dt {
+  width: 7em;
+}
+
+#news dd {
+  width: calc(100% - 7em);
+}
+
+#news dt,
+#news dd {
+  margin-bottom: 10px;
+}
+
+#sidebar ul li {
+  margin-bottom: 20px;
+  list-style-type: none;
+}
+
+/*footer*/
+
+footer{
+  margin-top: 100px;
+  padding:30px;
+  text-align: center;
+  color: #fff;
+  background-color: #000000;
+}
+
+footer ul{ 
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+}
+
+footer ul li{
+  display: inline-block;
+  margin: 5px;
+  list-style-type: none;
+}
+
+footer ul li a{
+  color:#fff;
+}
+
+footer ul li a:link{
+  text-decoration: none;
+}
+
+footer ul li a:hover,
+footer ul li a:active{
+  opacity: 0.7;
+}
+
+#social_footer ul li{
+  margin-left:30px;
+  width: 30px;
+}
+
+small{
+  font-size: 0.7rem;
+}
+
+/*responsive*/
+@media(max-width:600px){
+  html{
+    font-size: 87.5%;
+  }
+
+  .header_logo{
+    width : 60px;
+  }
+
+  .contents{
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  #main_content,
+  #sidebar{
+    width: 100%;
+  }
+}
