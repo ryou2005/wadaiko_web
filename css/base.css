@@ -31,3 +31,29 @@ header{
   width : 90px;
 }
 
+.social{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:10px auto;
+}
+
+.social ul{
+  display:flex;
+}
+
+.social ul li{
+  margin-left:30px;
+}
+
+.social ul li a{
+  text-decoration: none;
+  color:#555;
+}
+
+.social ul li a:hover,
+.social ul li a:active,
+.social ul li.current a{
+  color:#8c6239;
+}
+
