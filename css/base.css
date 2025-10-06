@@ -28,19 +28,31 @@ header{
 }
 
 .header_logo{
-  width : 120px;
+  width : 60px;
+  margin-right :50px;
 }
+
+.header_name{
+  width:120px;
+  transform: rotate(90deg);
+}
+
+
+.header_logo, .header_name {
+  display: inline-block;
+  vertical-align: middle;
+}
+
 
 .header-top{
   display:flex;
   justify-content: space-between;
-  align-items:center;
   padding:10px 0;
 }
 
+
 .social{
   display:flex;
-  align-items: center;
 }
 
 .social ul{
@@ -63,17 +75,19 @@ header{
 .social ul li.current a{
   color:#000000;
 }
-
+/*
 .main-nav{
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px auto;
+  margin-top:10px;
+  width:100%;
 }
+  */
 
 .main-nav ul{
   display:flex;
-  font-weight: bold;
 }
 
 .main-nav ul li{
@@ -197,7 +211,7 @@ small{
 
 /*responsive*/
 @media(max-width:600px){
-  html{
+  #main,#aside,#footer{
     font-size: 87.5%;
   }
 
