@@ -1,4 +1,4 @@
-const images = ["images/slideshow/slideshow1.jpeg", "images/slideshow/slideshow2.jpeg", "images/slideshow/slideshow3.jpeg"];
+const images = ["images/slideshow/slideshow1.jpg", "images/slideshow/slideshow2.jpg", "images/slideshow/slideshow3.jpeg"];
 let count = 0;
 
 function changeImage() {
