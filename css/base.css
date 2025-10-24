@@ -121,7 +121,7 @@ header{
 }
 
 .main-nav{
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin-top: 0%;
   margin-bottom: 5px;
   text-align: center;
@@ -145,6 +145,7 @@ header{
 .main-nav ul li.current a{
   color:#000000;
 }
+
 
 .nav-menu {
   display: none;
