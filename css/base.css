@@ -121,7 +121,7 @@ header{
 }
 
 .main-nav{
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin-top: 0%;
   margin-bottom: 5px;
   text-align: center;
@@ -149,83 +149,6 @@ header{
 
 .nav-menu {
   display: none;
-}
-
-/* Slideshow (double-buffer JS-controlled) */
-.slideshow {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  background-color: #000;
-}
-.slide {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-.slide.visible {
-  opacity: 1;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .slide { transition: none; }
-}
-
-/*contents*/
-
-.contents{
-  display: flex;
-  justify-content: space-between;
-  margin-top: 50px;
-}
-
-#main_content{
-  width: 65%;
-}
-
-#sub_content{
-  width: 31%;
-}
-
-#home h2{
-    margin-bottom: 20px;
-  padding-bottom: 5px;
-  border-bottom: 1px solid #000000;
-  font-size: 1.2rem;
-}
-
-#summary ul li{
-  margin-bottom: 10px;
-  list-style-type: none;
-}
-
-#news dl {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 50px;
-}
-
-#news dt {
-  width: 7em;
-}
-
-#news dd {
-  width: calc(100% - 7em);
-}
-
-#news dt,
-#news dd {
-  margin-bottom: 10px;
-}
-
-#sidebar ul li {
-  margin-bottom: 20px;
-  list-style-type: none;
 }
 
 /*footer*/
@@ -301,16 +224,6 @@ small{
     width: 25px;
   }
 
-
-  .contents{
-    flex-direction: column;
-    margin-top: 10px;
-  }
-
-  #main_content,
-  #sidebar{
-    width: 100%;
-  }
 }
 
 @media (max-width: 992px) {
@@ -355,8 +268,10 @@ small{
     display: none;
   }
 
+  /* nav menu: animate the white panel itself using scaleY, then stagger items */
   .nav-menu {
-    display: none; /* Hide menu by default on mobile */
+    /* keep layout as flex but collapsed by scaleY(0) */
+    display: flex;
     position: absolute;
     top: 88px; /* Adjust as needed */
     left: 0;
@@ -364,6 +279,12 @@ small{
     background-color: white;
     flex-direction: column;
     text-align: center;
+    transform-origin: top;
+    transform: scaleY(0);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 320ms cubic-bezier(.2,.9,.2,1), opacity 220ms ease;
+    z-index: 2000; /* bring menu above slideshow */
   }
 
   .nav-menu ul {
@@ -375,6 +296,10 @@ small{
   .nav-menu ul li {
     margin: 0;
     border-bottom: 1px solid #eee;
+    list-style: none;
+    /* start hidden; JS will set per-item animationDelay */
+    opacity: 0;
+    transform: translateY(-12px);
   }
 
   .nav-menu ul li a {
@@ -384,8 +309,33 @@ small{
     color: #555;
   }
 
+  /* When active, reveal panel and enable pointer events; items animate via CSS keyframes with per-item delays set by JS */
   .nav-menu.active {
-    display: flex; /* Show when active */
+    transform: scaleY(1);
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 2000; /* ensure visible above other content */
+  }
+
+  /* Staggered slide-in for menu items */
+  .nav-menu ul li {
+    opacity: 0;
+    transform: translateY(-12px);
+    list-style: none;
+  }
+
+  .nav-menu.active ul li {
+    /* animation will be triggered when nav-menu gets active; per-item delay set by JS */
+    animation: slideDown 360ms ease forwards;
+  }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .nav-menu ul li { opacity: 1; transform: none; animation: none; }
   }
 
   .main-nav ul {
@@ -404,9 +354,6 @@ small{
     display: block;
   }
 
-  #sidebar{
-    display: none;
-  }
 
   #footer{
     font-size: 87.5%;
