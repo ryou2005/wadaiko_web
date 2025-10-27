@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="ja">
-
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>指導者・指導員紹介</title>
-    <link rel="stylesheet" href="css/html5reset-1.6.1.css">
+    <title>公演予定</title>
+     <link rel="stylesheet" href="css/html5reset-1.6.1.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="css/base.css">
-  </head>
+    <link rel="stylesheet" href="css/schedule.css">
+</head>
 
-  <body>
+<body>
     <!--header begin-->
-    <header id="top">
+        <header id="top">
       <div class="header-top">
         <button class="hamburger-btn" id="hamburger-btn" aria-label="メニューを開閉する">
           <span></span>
@@ -40,8 +40,8 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="class.html">クラス</a></li>
-          <li><a class="active" href="teachers.html">指導者・指導員紹介</a></li>
-          <li><a href="schedule.html">公演予定</a></li>
+          <li><a href="teachers.html">指導者・指導員紹介</a></li>
+          <li><a class="active" href="schedule.html">公演予定</a></li>
           <li><a href="report.html">メンバーより</a></li>
           <li><a href="entry.html">入会案内</a></li>
           <li><a href="#">お問い合わせ</a></li>
@@ -50,10 +50,10 @@
       </nav>
       <div class="nav-menu" id="nav-menu">
         <ul>
-          <li><a href="index.html">Home</a></li>
+          <li><a class="active" href="index.html">Home</a></li>
           <li><a href="class.html">クラス</a></li>
-          <li><a class="active" href="teachers.html">指導者・指導員紹介</a></li>
-          <li><a href="schedule.html">公演予定</a></li>
+          <li><a href="teachers.html">指導者・指導員紹介</a></li>
+          <li><a class="active" href="schedule.html">公演予定</a></li>
           <li><a href="report.html">メンバーより</a></li>
           <li><a href="entry.html">入会案内</a></li>
           <li><a href="#">お問い合わせ</a></li>
@@ -65,38 +65,45 @@
 
     <!--main begin-->
     <main>
-      <h1>指導者・指導員紹介</h1>
-      <h2>指導者</h2>
-      <p>栗原 清美</p>
-      <p>経歴等</p>
-      <p>一言メッセージ</p>
+        <h1>公演予定</h1>
+        <table>
+            <tr class="example">
+                <th>日付</th>
+                <th>イベント名</th>
+                <th>場所</th>
+                <th>詳細</th>
+            </tr>
+            <tr>
+                <td>2025年4月5日</td>
+                <td>発表会</td>
+                <td>ふれあいホール</td>
+                <td>武天の発表会です。</td>
+            </tr>
+            <tr>
+                <td>2025年8月1日</td>
+                <td>あきる野夏祭り</td>
+                <td>秋川駅前</td>
+                <td>毎年恒例の夏祭りでの公演です。</td>
+            </tr>
+            <tr>
+                <td>2024年12月20日</td>
+                <td>年末スペシャルコンサート</td>
+                <td>市民会館ホール</td>
+                <td>一年の締めくくりにふさわしいスペシャルコンサート。</td>
+            </tr>
+        </table>
 
-      <h2>指導員</h2>
-      <p>栗原 政宗</p>
-      <p>経歴等</p>
-      <p>一言メッセージ</p>
 
-      <p>美村 綾香</p>
-      <p>経歴等</p>
-      <p>一言メッセージ</p>
-
-      <p>美村 涼太</p>
-      <p>経歴等</p>
-      <p>一言メッセージ</p>
-
-      <p>川久保 諒</p>
-      <p>経歴等</p>
-      <p>一言メッセージ</p>
     </main>
     <!--main end-->
 
-    <!--footer begin-->
+        <!--footer begin-->
     <footer>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="teachers.html">指導者・指導員紹介</a></li>
         <li><a href="class.html">クラス</a></li>
-        <li><a href="schedule.html">公演予定</a></li>
+        <li><a class="active" href="schedule.html">公演予定</a></li>
         <li><a href="report.html">活動報告</a></li>
         <li><a href="entry.html">入会案内</a></li>
         <li><a href="#">お問い合わせ</a></li>
@@ -113,11 +120,12 @@
       </nav>
     </footer>
     <!--footer end-->
+
+
     <script src="javascript/menu.js"></script>
     <script src="javascript/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
       crossorigin="anonymous"></script>
-  </body>
-
+</body>
 </html>
